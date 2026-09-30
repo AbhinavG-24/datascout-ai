@@ -1,0 +1,21 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DataScout – AI Data Intelligence Platform</title><link rel="stylesheet" href="/static/style.css"></head><body>
+<header class="top"><div><h1>🔎 DataScout</h1><span class="m">Prompt → workflow → source-backed dataset</span></div>
+<div class="r"><span id="ai" class="badge"></span><span id="sum" class="m"></span><button id="theme" title="Toggle theme">◐</button></div></header>
+<div class="w">
+<aside><div class="card"><div class="r sp"><h2>Tasks</h2><input id="tq" placeholder="Filter…" style="width:90px"></div><div id="tl"></div></div></aside>
+<main>
+ <div class="card"><h2>What data do you need?</h2>
+  <textarea id="p" rows="3" placeholder="Describe it in plain English. Paste seed URLs if you have them."></textarea>
+  <div class="r" id="tpl"></div>
+  <details><summary>Advanced options</summary><div class="grid">
+   <label>Fields (comma-separated, optional)<input id="fld" placeholder="company, role, location, apply link"></label>
+   <label>Max pages<input id="mp" type="number" value="10" min="1" max="100"></label>
+   <label>Link depth<select id="dp"><option value="0">0 – given pages only</option><option value="1">1 – follow relevant links</option><option value="2">2</option></select></label>
+   <label>Re-run every (min, 0 = off)<input id="iv" type="number" value="0" min="0"></label>
+   <label>Delay per domain (s)<input id="dl" type="number" value="1" step=".5" min=".3"></label></div></details>
+  <div class="r"><button class="p" id="go">▶ Create &amp; run workflow</button><span class="m">Only robots.txt-permitted pages are fetched.</span></div></div>
+ <div id="view"></div>
+</main></div>
+<dialog id="dlg"></dialog><div id="toast"></div>
+<script src="/static/app.js"></script></body></html>
